@@ -11,17 +11,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String firstName;
     private String lastName;
     private String email;
-    
+
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
-    
+
     public boolean isPersisted() {
         return null != id;
     }
