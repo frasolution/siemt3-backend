@@ -1,10 +1,9 @@
 package com.mycompany.siemproject.controller;
 
 import com.mycompany.siemproject.model.User;
-import com.mycompany.siemproject.service.UserService;
+import com.mycompany.siemproject.services.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,7 +1,7 @@
 package com.mycompany.siemproject.controller;
 
 import com.mycompany.siemproject.model.Alert;
-import com.mycompany.siemproject.service.AlertService;
+import com.mycompany.siemproject.services.AlertService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
