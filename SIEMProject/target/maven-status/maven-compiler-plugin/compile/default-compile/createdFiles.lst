@@ -1,0 +1,7 @@
+com\mycompany\siemproject\model\User.class
+com\mycompany\siemproject\repository\UserRepository.class
+com\mycompany\siemproject\controller\AlertController.class
+com\mycompany\siemproject\service\AlertService.class
+com\mycompany\siemproject\SIEMApiApp.class
+com\mycompany\siemproject\model\Alert.class
+com\mycompany\siemproject\repository\AlertRepository.class
