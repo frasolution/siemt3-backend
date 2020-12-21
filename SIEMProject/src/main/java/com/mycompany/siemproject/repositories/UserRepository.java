@@ -1,4 +1,4 @@
-package com.mycompany.siemproject.repository;
+package com.mycompany.siemproject.repositories;
 
 import com.mycompany.siemproject.model.User;
 import java.util.List;

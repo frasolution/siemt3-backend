@@ -1,7 +1,7 @@
-package com.mycompany.siemproject.service;
+package com.mycompany.siemproject.services;
 
 import com.mycompany.siemproject.model.User;
-import com.mycompany.siemproject.repository.UserRepository;
+import com.mycompany.siemproject.repositories.UserRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
