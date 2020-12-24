@@ -13,9 +13,10 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    /*
     @Autowired
     private PasswordEncoder passwordEncoder;
-
+*/
     public List<User> getAll() {
         return userRepository.findAll();
     }
@@ -25,7 +26,7 @@ public class UserService {
             final User persistedUser = userRepository.findById(user.getId()).orElseThrow(() -> new Exception("User not found"));
             user.setPassword(persistedUser.getPassword());
         } else {
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
+//            user.setPassword(passwordEncoder.encode(user.getPassword()));
         }
         return userRepository.save(user);
     }

@@ -6,4 +6,5 @@ com\mycompany\siemproject\SIEMApiApp.class
 com\mycompany\siemproject\controller\UserController.class
 com\mycompany\siemproject\services\UserService.class
 com\mycompany\siemproject\model\Alert.class
+.netbeans_automatic_build
 com\mycompany\siemproject\repositories\UserRepository.class
