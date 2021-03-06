@@ -12,5 +12,7 @@ public interface AlertRepository extends CrudRepository<Alert, Integer> {
 
     @Override
     Optional<Alert> findById(Integer id);
+    
+    
 
 }

@@ -5,7 +5,8 @@ CREATE TABLE IF NOT EXISTS `users` (
     `first_name` VARCHAR(20),
     `last_name` VARCHAR(20),
     `email` VARCHAR(50),
-    `password` VARCHAR(50),
+    `password` VARCHAR(255),
+    `admin` BOOLEAN,
     PRIMARY KEY (`id`)
 );
 
@@ -14,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `alerts` (
     `event_id` VARCHAR(20),
     `event_type` VARCHAR(20),
     `event_name` VARCHAR(20),
-    `date` DATE,
+    `date` TIMESTAMP,
     `priority` INT(1),
     `custom_data` VARCHAR(100),
     PRIMARY KEY (`id`)
