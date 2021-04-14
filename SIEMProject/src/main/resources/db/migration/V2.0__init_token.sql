@@ -1,4 +1,4 @@
-use `siem`;
+USE siem;
 
 CREATE TABLE verification_token (
     id INT(11) NOT NULL AUTO_INCREMENT,
