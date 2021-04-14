@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -17,10 +16,7 @@ public class Alert {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    
-    @NotNull
-    private String eventId;
-    
+
     @NotNull
     private String eventType;
     
@@ -28,7 +24,7 @@ public class Alert {
     private String eventName;
     
     private LocalDateTime date;
-    private String priority;
+    private int priority;
     private String customData;
 
     public Alert() {
@@ -36,10 +32,6 @@ public class Alert {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public void setEventId(String eventId) {
-        this.eventId = eventId;
     }
 
     public void setEventType(String eventType) {
@@ -55,7 +47,7 @@ public class Alert {
       this.date = LocalDateTime.now();
     }
     
-    public void setPriority(String priority) {
+    public void setPriority(int priority) {
         this.priority = priority;
     }
 
@@ -65,10 +57,6 @@ public class Alert {
 
     public Integer getId() {
         return id;
-    }
-
-    public String getEventId() {
-        return eventId;
     }
 
     public String getEventType() {
@@ -84,7 +72,7 @@ public class Alert {
         return date;
     }
 
-    public String getPriority() {
+    public int getPriority() {
         return priority;
     }
 

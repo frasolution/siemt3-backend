@@ -18,7 +18,7 @@ public class AlertService {
     }
 
     public List<Alert> getAllAlerts() {
-        return alertRepository.findAll();
+        return alertRepository.findAllByOrderByDateDesc();
     }
 
     @Transactional

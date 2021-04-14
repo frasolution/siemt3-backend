@@ -1,5 +1,6 @@
 package com.mycompany.siemproject.services;
 
+import com.mycompany.siemproject.dto.RegistrationDto;
 import com.mycompany.siemproject.model.User;
 import com.mycompany.siemproject.model.VerificationToken;
 import com.mycompany.siemproject.repositories.TokenRepository;
@@ -24,9 +25,21 @@ public class RegistrationService {
 
     @Autowired
     private TokenRepository tokenRepository;
+    
+    @Autowired
+    private RegistrationService registrationService;
 
-    public User createOrUpdatePassword(@Valid User user) throws Exception {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+    public User createOrUpdatePassword(@Valid RegistrationDto registrationDto) throws Exception {
+        VerificationToken verificationToken = registrationService.getVerificationToken(registrationDto.getToken());
+        if (null == verificationToken) {
+            throw new Exception("Token is invalid.");
+        }
+        if (verificationToken.isExpired()) {
+            throw new Exception("Token is expired.");
+        }
+        User user = verificationToken.getUser();
+        user.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
+        tokenRepository.delete(verificationToken);
         return userRepository.save(user);
     }
 
@@ -43,5 +56,5 @@ public class RegistrationService {
     public VerificationToken getVerificationToken(String VerificationToken) {
         return tokenRepository.findByToken(VerificationToken);
     }
-    
+
 }

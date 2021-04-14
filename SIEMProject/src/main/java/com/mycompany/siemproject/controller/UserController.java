@@ -1,7 +1,7 @@
 package com.mycompany.siemproject.controller;
 
+import com.mycompany.siemproject.dto.RegistrationDto;
 import com.mycompany.siemproject.dto.UserDto;
-import com.mycompany.siemproject.exceptions.UserAlreadyExistException;
 import com.mycompany.siemproject.model.User;
 import com.mycompany.siemproject.services.UserService;
 import java.util.List;
@@ -31,13 +31,19 @@ public class UserController {
  
     @PreAuthorize("hasAnyRole('ADMIN')")
     @PostMapping
-    public User createUser(@RequestBody @Valid UserDto userDto) throws UserAlreadyExistException {
+    public User createUser(@RequestBody @Valid UserDto userDto) throws Exception {
         return userService.createUser(userDto);
     }
     
-    @PostMapping("admin")
-    public User createAmin(@RequestBody @Valid User user) throws UserAlreadyExistException {
-        return userService.createAdmin(user);
+    @PostMapping("forgot-password")
+    public void forgotPassword(@RequestBody String email) throws Exception {
+        userService.updateUserPassword(email);
     }
+    
+    @PostMapping("reset-password")
+    public User resetPassword(@RequestBody @Valid RegistrationDto registrationDto) throws Exception {
+        return userService.updatePassword(registrationDto);
+    }
+    
 }
 

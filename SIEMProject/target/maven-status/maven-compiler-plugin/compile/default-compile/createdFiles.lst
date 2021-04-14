@@ -1,11 +1,16 @@
 com\mycompany\siemproject\event\RegistrationListener.class
 com\mycompany\siemproject\security\SiemUserDetails.class
+com\mycompany\siemproject\event\ForgotPasswordListener.class
 com\mycompany\siemproject\controller\RegistrationController.class
 com\mycompany\siemproject\config\MailConfig.class
 com\mycompany\siemproject\security\SiemUserDetailsService.class
 com\mycompany\siemproject\security\AuthenticationRequest.class
+com\mycompany\siemproject\event\OnForgotPasswordEvent.class
 com\mycompany\siemproject\controller\UserController.class
+com\mycompany\siemproject\dto\ThresholdDto.class
+com\mycompany\siemproject\repositories\ThresholdRepository.class
 com\mycompany\siemproject\security\JwtAuthenticationProvider.class
+com\mycompany\siemproject\controller\ThresholdController.class
 com\mycompany\siemproject\security\JwtAuthenticationFilter.class
 com\mycompany\siemproject\event\OnRegistrationEvent.class
 com\mycompany\siemproject\dto\UserDto.class
@@ -27,7 +32,9 @@ com\mycompany\siemproject\repositories\UserRepository.class
 com\mycompany\siemproject\validation\EmailValidator.class
 com\mycompany\siemproject\config\SecurityConfig.class
 com\mycompany\siemproject\security\JwtAuthenticationEntryPoint.class
+com\mycompany\siemproject\model\Threshold.class
 com\mycompany\siemproject\repositories\TokenRepository.class
+com\mycompany\siemproject\services\ThresholdService.class
 com\mycompany\siemproject\security\JwtAuthenticationService.class
 com\mycompany\siemproject\security\AuthenticationResponse.class
 com\mycompany\siemproject\repositories\AlertRepository.class

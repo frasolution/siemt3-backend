@@ -30,14 +30,5 @@ public class AlertController {
     public Alert getAlert(@PathVariable Integer id) throws Exception {
         return alertService.getAlert(id);
     }
-
-    @PostMapping
-    public void createOrUpdateAlert(@RequestBody Alert alert) {
-        alertService.createOrUpdateAlert(alert);
-    }
-
-    @DeleteMapping("{id}")
-    public void deleteAlert(@PathVariable Integer id) throws Exception {
-        alertService.deleteAlert(id);
-    }
+    
 }
